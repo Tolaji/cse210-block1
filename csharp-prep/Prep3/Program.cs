@@ -6,50 +6,130 @@ class Program
     {
         Console.WriteLine("Hello Prep3 World!");
 
-        // Prompt user for magic number
+        // Core Requirement 1
         Console.Write("What is the magic number?  ");
-        string magicNumber = Console.ReadLine();
-        // Convert the user input to an integer as: If conversion successful, use 'result'
-        if (int.TryParse(magicNumber, out int number))
+        string magicNumberInput = Console.ReadLine();
 
-        // Prompt user for magic number
-        Console.Write("What is your guess?  ");
-        string guessNumber = Console.ReadLine();
+        
         // Convert the user input to an integer as: If conversion successful, use 'result'
-        if (int.TryParse(guessNumber, out int guess))
+        if (int.TryParse(magicNumberInput, out int magicNumber))
         {
-            if (guess < number)
-            {
-                Console.WriteLine("Guess Higher");
-            }
-            else if (guess > number)
-            {
-                Console.WriteLine("Guess Lower");
-            }
-            else
-            {
-                Console.WriteLine("You Guessed it");
-            }
+            // Core Requirement 1: Prompt user for guess
+            Console.Write("What is your guess?  ");
+            string guessInput = Console.ReadLine();
 
-            Console.WriteLine($"Your Score: {score}, Your grade: {letter}\n");
+            
+            // Convert the user input to an integer as: If conversion successful, use 'result'
+            if (int.TryParse(guessInput, out int userGuess))
             {
-                if (letter == "A" || letter == "B" || letter == "C" )
+                // Compare the guess with the magic number
+                if (userGuess < magicNumber)
                 {
-                    Console.WriteLine("Congratulations! You have passed the course");
+                    Console.WriteLine("Guess Higher");
+                }
+                else if (userGuess > magicNumber)
+                {
+                    Console.WriteLine("Guess Lower");
                 }
                 else
                 {
-                    Console.WriteLine("Am sorry, I know you tried hard, but you have to try harder next time");
+                    Console.WriteLine("You Guessed it!");
                 }
-
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer as your guess.");
             }
         }
         else
-        // Handle exception error in the case that the input is not a valid integer
         {
-            Console.WriteLine("Invalid input. Please enter a valid integer as your guess.");
+            Console.WriteLine("Invalid input. Please enter a valid integer as the magic number.");
+        }
+
+        Console.WriteLine("Core Requirement 2\n");
+
+        // Core Requirement 2: Implement a loop for repeated guesses
+        Console.Write("What is the magic number?  ");
+        string magicNumberInput2 = Console.ReadLine();
+
+        
+        // Convert the user input to an integer as: If conversion successful, use 'result'
+        if (int.TryParse(magicNumberInput2, out int magicNumber2))
+        {
+            // Loop terminate based on whether the user guessed the correct number
+            bool guessedCorrectly = false;
+
+            do
+            {
+                Console.Write("What is your guess?  ");
+                string trialInput = Console.ReadLine();
+
+                // Convert the user input to an integer
+                if (int.TryParse(trialInput, out int trial))
+                {
+                    if (trial < magicNumber2)
+                    {
+                        Console.WriteLine("Guess Higher");
+                    }
+                    else if (trial > magicNumber2)
+                    {
+                        Console.WriteLine("Guess Lower");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You Guessed it!");
+                        guessedCorrectly = true;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer as your guess.");
+                }
+
+            } while (!guessedCorrectly);
+        }
+        else
+        {
+            Console.WriteLine("Invalid input. Please enter a valid integer as the magic number.");
+        }
+
+        Console.WriteLine("Core Requirement 3\n");
+
+        // Random number generation
+        Random randomGenerator = new Random();
+        int number = randomGenerator.Next(1,11);
+        {
+            // Loop terminate based on whether the user guessed the correct number
+            bool guessedCorrectly = false;
+
+            do
+            {
+                Console.Write("What is your guess?  ");
+                string trialInput = Console.ReadLine();
+
+                // Convert the user input to an integer
+                if (int.TryParse(trialInput, out int trial))
+                {
+                    if (trial < magicNumber2)
+                    {
+                        Console.WriteLine("Guess Higher");
+                    }
+                    else if (trial > magicNumber2)
+                    {
+                        Console.WriteLine("Guess Lower");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You Guessed it!");
+                        guessedCorrectly = true;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input. Please enter a valid integer as your guess.");
+                }
+
+            } while (!guessedCorrectly);
         }
     }
 }
-
-

@@ -4,44 +4,31 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Prep1 World!");
+        Console.WriteLine("Hello Prep3 World!");
 
-        Console.Write("What is your first name? ");
-        string firstname = Console.ReadLine();
-
-        Console.Write("What is your last name? ");
-        string lastname = Console.ReadLine();
-
-        Console.WriteLine($"Your name is {lastname}, {firstname} {lastname}.");
-
-        // Prompt user to provide score
-        Console.Write("What is your score percentage?  ");
-        string scoreString = Console.ReadLine();
-
+        // Prompt user for magic number
+        Console.Write("What is the magic number?  ");
+        string magicNumber = Console.ReadLine();
         // Convert the user input to an integer as: If conversion successful, use 'result'
-        if (int.TryParse(scoreString, out int score))
-        {
-            string letter;
+        if (int.TryParse(magicNumber, out int number))
 
-            if (score >= 90)
+        // Prompt user for magic number
+        Console.Write("What is your guess?  ");
+        string guessNumber = Console.ReadLine();
+        // Convert the user input to an integer as: If conversion successful, use 'result'
+        if (int.TryParse(guessNumber, out int guess))
+        {
+            if (guess < number)
             {
-                letter = "A";
+                Console.WriteLine("Guess Higher");
             }
-            else if (score >= 80)
+            else if (guess > number)
             {
-                letter = "B";
-            }
-            else if (score >= 70)
-            {
-                letter = "C";
-            }
-            else if (score >= 60)
-            {
-                letter = "D";
+                Console.WriteLine("Guess Lower");
             }
             else
             {
-                letter = "F";
+                Console.WriteLine("You Guessed it");
             }
 
             Console.WriteLine($"Your Score: {score}, Your grade: {letter}\n");
@@ -60,7 +47,7 @@ class Program
         else
         // Handle exception error in the case that the input is not a valid integer
         {
-            Console.WriteLine("Invalid input. Please enter a valid integer for the score.");
+            Console.WriteLine("Invalid input. Please enter a valid integer as your guess.");
         }
     }
 }

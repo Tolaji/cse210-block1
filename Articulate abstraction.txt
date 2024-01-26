@@ -1,0 +1,47 @@
+Explain the meaning of Abstraction:
+Abstraction is the process of simplifying complex ideas by removing non-essential details, 
+focusing only on the crucial aspects. In programming, it involves creating and using 
+simplified representations of complex systems, making it easier for developers to 
+interact with and understand those systems without needing to know every intricate detail.
+
+Highlight a benefit of Abstraction:
+A key benefit of abstraction is that it enables a higher level of comprehension and 
+efficiency in software development. Developers can work with higher-level concepts 
+without being bogged down by the underlying complexities. This enhances code readability, 
+maintenance, and collaboration, ultimately leading to more effective and scalable software development.
+
+Provide an application of Abstraction:
+One practical application of abstraction in programming is the use of functions or 
+methods. For instance, the Python `print` function serves as an abstraction. Instead of 
+understanding the intricate details of how text is displayed on a computer, programmers can 
+simply use the `print` function, which internally handles the complexity. This allows developers 
+to focus on the high-level task of displaying text without dealing with the low-level 
+implementation details.
+
+Use a code example of Abstraction from the program you wrote:
+
+The code snippet:
+using System;
+public class Job
+{
+    // Public fields
+    public string _company;
+    public string _jobTitle;
+    public int _startYear;
+    public int _endYear;
+    
+    // Method to display job information
+    public void DisplayJobInfo()
+    {
+        Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
+    }
+}
+the 'Job' class abstracts the concept of a job by encapsulating its properties and behavior, thereby 
+providing a higher-level representation that simplifies the usage of job-related information in a 
+program. This abstraction enhances code readability and ease of use.
+
+Thoroughly explain these concepts:
+Abstraction simplifies complex ideas, allowing programmers to work with higher-level concepts e.g. 
+the "print" fuction, by simplifying such a complex code into a simple word "print", we do not need 
+to understand the underlying code implementation details. Its benefits include improved code 
+readability, maintenance, and collaboration. The provided snippet,  exemplifies code ease of use. 
